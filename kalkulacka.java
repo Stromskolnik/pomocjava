@@ -2,25 +2,25 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.util.Scanner;
 import javax.swing.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 public class kalkulacka{
     String mezipocet="0";
     String mezipocet2="0";
-    int vysledek1=0;
-    int vysledek2=0;
+    float vysledek1=0;
+    float vysledek2=0;
     int nejdeboolean=0;
     boolean plus=false;
     boolean minus=false;
     boolean krat=false;
     boolean deleno=false;
+    float vysledek=0;
+    String vysledekstr="0";
     public kalkulacka(){
         JFrame frame = new JFrame();
         JPanel panel =new JPanel();
-        JLabel label = new JLabel(mezipocet, null, 0);
-        label= new JLabel (mezipocet);
+        JLabel label = new JLabel();
         JButton button0 = new JButton("0");
         JButton button1 = new JButton("1");
         JButton button2 = new JButton("2");
@@ -41,13 +41,16 @@ public class kalkulacka{
         panel.setBorder(BorderFactory.createEmptyBorder(50, 10, 30, 30));
         panel.setLayout(new GridLayout(5,4));
         panel.add(button7);panel.add(button8);panel.add(button9);panel.add(buttondeleno);panel.add(button4);panel.add(button5);panel.add(button6);panel.add(buttonkrat);panel.add(button1);panel.add(button2);panel.add(button3);panel.add(buttonminus);panel.add(button0);panel.add(buttontecka);panel.add(buttonrovno);panel.add(buttonplus);panel.add(vymaz);
-        frame.setSize(150,150);
+        frame.setSize(300,400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Kalkulačka");
         frame.setVisible(true);
         frame.add(panel,BorderLayout.CENTER);
         frame.pack();
         frame.setVisible(true);
+        label.setText(vysledekstr);
+        panel.add(label);
+
 
         vymaz.addActionListener(new ActionListener() {
  
@@ -72,11 +75,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+0;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+0;
-                    System.out.println(mezipocet2);
                 }
 
    
@@ -87,11 +88,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+1;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+1;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -101,11 +100,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+2;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+2;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -115,11 +112,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+3;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+3;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -129,11 +124,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+4;
-                    System.out.println(mezipocet);
                 }
                 else{
-                    mezipocet2=mezipocet2+""+4;
-                    System.out.println(mezipocet2);
+                    mezipocet2=mezipocet2+""+4;;
                 }
             }
         });
@@ -142,12 +135,10 @@ public class kalkulacka{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
-                    mezipocet=mezipocet+""+5;
-                    System.out.println(mezipocet);
+                    mezipocet=mezipocet+""+5;;
                 }
                 else{
                     mezipocet2=mezipocet2+""+5;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -157,11 +148,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+6;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+6;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -171,11 +160,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+7;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+7;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -185,11 +172,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+8;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+8;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -199,11 +184,9 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 if (nejdeboolean>0){
                     mezipocet=mezipocet+""+9;
-                    System.out.println(mezipocet);
                 }
                 else{
                     mezipocet2=mezipocet2+""+9;
-                    System.out.println(mezipocet2);
                 }
             }
         });
@@ -211,23 +194,39 @@ public class kalkulacka{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                Integer vysledek1 =Integer.parseInt(mezipocet);
-                Integer vysledek2 =Integer.parseInt(mezipocet2);
-                if (plus=true){
-                    int vysledek=vysledek1+vysledek2;
-                    System.out.print(vysledek);
+                Float vysledek1 =Float.parseFloat(mezipocet);
+                Float vysledek2 =Float.parseFloat(mezipocet2);
+                System.out.println(vysledek1);
+                System.out.println(vysledek2);
+                if (plus==true){
+                    vysledek=vysledek1+vysledek2;
+                    vysledekstr = Float.toString(vysledek);
+                    label.setText(vysledekstr);
+                    
+                    
+                    
                 }
-                if (minus=true){
-                    int vysledek=vysledek1-vysledek2;
-                    System.out.print(vysledek);
+                if (minus==true){
+                    vysledek=vysledek2-vysledek1;
+                    vysledekstr = Float.toString(vysledek);
+                    label.setText(vysledekstr);
+                    
+                    
                 }
-                if (krat=true){
-                    int vysledek=vysledek1*vysledek2;
-                    System.out.print(vysledek);
+                if (krat==true){
+                    vysledek=vysledek1*vysledek2;
+                    vysledekstr = Float.toString(vysledek);
+                    label.setText(vysledekstr);
+                    
+                    
                 }
-                if (deleno=true){
-                    int vysledek=vysledek1/vysledek2;
-                    System.out.print(vysledek);
+                if (deleno==true){
+                    vysledek=vysledek2/vysledek1;
+                    vysledekstr = Float.toString(vysledek);
+                    label.setText(vysledekstr);
+                    
+                    
+                    
                 }
                 
                 
@@ -266,9 +265,22 @@ public class kalkulacka{
                 deleno=true;
             }
         });
-
-
+        buttontecka.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (nejdeboolean > 0) {
+                    mezipocet = mezipocet + ".";
+                    
+                } else {
+                    mezipocet2 = mezipocet2 + ".";
+                    
+                }
+            }
+        });
     }
+
+
+    
     public static void main(String[] args){
         new kalkulacka();
     }
