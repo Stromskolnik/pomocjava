@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 public class kalkulacka{
     String mezipocet="0";
     String mezipocet2="0";
-    float vysledek1=0;
-    float vysledek2=0;
+    float vysledek1=0f;
+    float vysledek2=0f;
     int nejdeboolean=0;
     boolean plus=false;
     boolean minus=false;
@@ -59,8 +59,8 @@ public class kalkulacka{
             public void actionPerformed(ActionEvent e) {
                 mezipocet="0";
                 mezipocet2="0";
-                vysledek1=0;
-                vysledek2=0;
+                vysledek1=0f;
+                vysledek2=0f;
                 nejdeboolean=0;
                 plus=false;
                 minus=false;
@@ -198,10 +198,21 @@ public class kalkulacka{
                 Float vysledek2 =Float.parseFloat(mezipocet2);
                 System.out.println(vysledek1);
                 System.out.println(vysledek2);
+                System.out.println(mezipocet);
+                System.out.println(mezipocet2);
                 if (plus==true){
                     vysledek=vysledek1+vysledek2;
                     vysledekstr = Float.toString(vysledek);
                     label.setText(vysledekstr);
+                    plus=false;
+                    minus=false;
+                    krat=false;
+                    deleno=false;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    mezipocet2=vysledekstr;
+                    mezipocet="0";
                     
                     
                     
@@ -210,21 +221,53 @@ public class kalkulacka{
                     vysledek=vysledek2-vysledek1;
                     vysledekstr = Float.toString(vysledek);
                     label.setText(vysledekstr);
-                    
-                    
+                    plus=false;
+                    minus=false;
+                    krat=false;
+                    deleno=false;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    mezipocet2=vysledekstr;
+                    mezipocet="0";
                 }
                 if (krat==true){
                     vysledek=vysledek1*vysledek2;
                     vysledekstr = Float.toString(vysledek);
                     label.setText(vysledekstr);
-                    
+                    plus=false;
+                    minus=false;
+                    krat=false;
+                    deleno=false;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    mezipocet2=vysledekstr;
+                    mezipocet="0";
                     
                 }
                 if (deleno==true){
                     vysledek=vysledek2/vysledek1;
                     vysledekstr = Float.toString(vysledek);
                     label.setText(vysledekstr);
-                    
+                    plus=false;
+                    minus=false;
+                    krat=false;
+                    deleno=false;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    vysledek1=0f;
+                    vysledek2=0f;
+                    nejdeboolean=0;
+                    mezipocet2=vysledekstr;
+                    mezipocet="0";
                     
                     
                 }
